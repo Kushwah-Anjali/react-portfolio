@@ -21,7 +21,7 @@ const Footer = () => {
               href="mailto:anjalikushwah6163@gmail.com"
               className="text-textPrimary font-medium hover:text-accent transition flex items-center gap-1"
             >
-             anjalikushwah6163@gmail.com
+             anjalikushwah8163@gmail.com
             </a>
 
             {/* LinkedIn */}
