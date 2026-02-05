@@ -3,7 +3,7 @@
 A responsive personal portfolio website built using **React** and **Tailwind CSS** to showcase my skills, learning journey, and contact information.
 
 ## Live Demo
- [View Portfolio](link)
+ [View Portfolio](https://react-portfolio-three-zeta-13.vercel.app/)
 
 ##  Tech Stack
 - React
