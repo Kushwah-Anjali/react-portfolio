@@ -15,30 +15,30 @@ const About = () => {
         <div className="text-textMuted text-base md:text-lg leading-relaxed space-y-5 text-center md:text-left">
           <p>
             I’m{" "}
-            <span className="text-textPrimary font-medium">Anjali Kushwah</span>
-            , a web developer focused on building clean, responsive, and
-            user-friendly web applications. I enjoy working with modern frontend
-            technologies and turning ideas into real products.
+            <span className="text-textPrimary font-medium">
+              Anjali Kushwah
+            </span>
+            , a developer who builds clean and functional websites for real-world use.
           </p>
 
           <p>
-            I have hands-on experience with HTML, CSS, JavaScript, React,
-            Tailwind CSS, Bootstrap, and GitHub. I focus on writing clean code,
-            improving UI/UX, and understanding how things work behind the
-            scenes.
+            I work mainly with JavaScript, React, and modern web tools to create
+            responsive and user-friendly web applications.
           </p>
 
           <p>
-            Along with technical skills, I have intermediate-level English
-            communication skills (B1) and an interest in content writing. This
-            helps me explain my work clearly, collaborate better, and keep
-            improving every day.
+            I have completed internships where I worked on real projects like
+            event management systems and map-based tracking applications.
           </p>
 
           <p>
-            Currently, I am focused on strengthening my fundamentals, building
-            real-world projects, and preparing myself for professional
-            opportunities as a frontend developer.
+            Currently, I am focused on improving my fundamentals, learning full
+            stack development, and working on small real-world websites to gain
+            experience.
+          </p>
+
+          <p className="text-textPrimary font-medium">
+            I am available for freelance website projects.
           </p>
         </div>
       </div>
