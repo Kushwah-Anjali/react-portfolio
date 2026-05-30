@@ -1,4 +1,4 @@
-const projectsData = [
+const ProjectsData = [
   {
     title: "Eventify — Event Management",
     description:
@@ -29,4 +29,4 @@ const projectsData = [
   },
 ];
 
-export default projectsData;
+export default ProjectsData;
