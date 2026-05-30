@@ -1,5 +1,4 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-
 const Footer = () => {
   return (
     <footer id="contact" className="bg-bg border-t border-slate-800 py-10">
