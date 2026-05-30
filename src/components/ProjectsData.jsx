@@ -1,28 +1,29 @@
 const projectsData = [
   {
-    title: "Eventify - Event Management",
+    title: "Eventify — Event Management",
     description:
-      "Full-stack event management system with role-based authentication, OTP verification, AI-powered descriptions, Google Maps integration, and document upload functionality.",
-    image: "", // Add screenshot URL here later
-    tech: ["React", "Node.js", "Express", "MySQL", "Groq AI"],
+      "Full-stack platform with 3-tier role system (User, Admin, Super Admin), OTP email verification, AI-generated event descriptions, and Google Maps venue display.",
+    image: "",
+    tech: ["React", "Node.js", "MySQL", "Groq AI", "Google Maps", "Nodemailer"],
     demo: "#",
     code: "https://github.com/Kushwah-Anjali/Eventify",
+    docs: "https://drive.google.com/file/d/1F1Euqn6VAaH4acPqxmeYKUQjzipznK_D/view?usp=drive_link",
   },
   {
     title: "Fleet Management System",
     description:
-      "Map-based tracking system using Google Maps API to track movement with real-time latitude and longitude updates. Implemented marker tracking and polylines for routes.",
+      "Real-time vehicle tracking dashboard with multi-vehicle monitoring, optimized route planning via GraphHopper, and animated marker movement on Google Maps.",
     image: "",
-    tech: ["React", "Google Maps API", "JavaScript"],
+    tech: ["React", "JavaScript (ES6+)", "Google Maps API", "GraphHopper API"],
     demo: "#",
     code: "https://github.com/Kushwah-Anjali/Fleet-Management-System",
   },
   {
     title: "Portfolio Website",
     description:
-      "Personal portfolio website showcasing projects and skills with clean UI, smooth animations, and fully responsive design for all devices.",
+      "Personal developer portfolio with smooth AOS animations and fully responsive design. The one you're looking at right now.",
     image: "",
-    tech: ["React", "Tailwind CSS", "AOS"],
+    tech: ["React", "Tailwind CSS", "AOS", "Vercel"],
     demo: "https://react-portfolio-three-zeta-13.vercel.app/",
     code: "https://github.com/Kushwah-Anjali/react-portfolio",
   },

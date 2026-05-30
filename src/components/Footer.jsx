@@ -1,49 +1,59 @@
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <footer id="contact" className="bg-bg border-t border-slate-800 py-10">
-      <div className="max-w-5xl mx-auto px-4 md:px-0 flex flex-col md:flex-row justify-between items-center gap-6">
-        {/* Left side: copyright */}
-        <span className="text-textMuted text-sm md:text-base text-center md:text-left">
-          © {new Date().getFullYear()} Anjali Kushwah.
-        </span>
+      <div className="max-w-5xl mx-auto px-4 md:px-0 flex flex-col gap-6">
 
-        {/* Right side: contact links with icons */}
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <span className="text-textMuted text-sm md:text-base text-center sm:text-left">
-            Contact Me:
-          </span>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
 
-          <div className="flex items-center gap-4">
-            {/* Email */}
+    
+          <div>
+            <p className="text-textPrimary font-medium text-base">
+              Anjali Kushwah
+            </p>
+            <p className="text-textMuted text-sm mt-1">
+              Frontend Developer · React.js
+            </p>
+          </div>
+
+    
+          <div className="flex flex-wrap items-center gap-5">
             <a
-              href="mailto:anjalikushwah6163@gmail.com"
-              className="text-textPrimary font-medium hover:text-accent transition flex items-center gap-1"
+              href="mailto:anjalikushwah8163@gmail.com"
+              className="flex items-center gap-2 text-textMuted hover:text-accent transition text-sm"
             >
-             anjalikushwah8163@gmail.com
+              <FaEnvelope className="text-base" />
+              anjalikushwah8163@gmail.com
             </a>
 
-            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/anjali-kushwah-6384b5308/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-400 transition text-2xl"
+              className="flex items-center gap-2 text-textMuted hover:text-blue-400 transition text-sm"
             >
-              <FaLinkedin />
+              <FaLinkedin className="text-base" />
+              LinkedIn
             </a>
 
-            {/* GitHub */}
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Kushwah-Anjali"
               target="_blank"
               rel="noopener noreferrer"
-              className=" hover:text-black transition text-2xl"
+              className="flex items-center gap-2 text-textMuted hover:text-textPrimary transition text-sm"
             >
-              <FaGithub />
+              <FaGithub className="text-base" />
+              GitHub
             </a>
           </div>
         </div>
+
+    
+        <p className="text-xs text-textMuted opacity-50">
+          © {new Date().getFullYear()} Anjali Kushwah. All rights reserved.
+        </p>
+
       </div>
     </footer>
   );

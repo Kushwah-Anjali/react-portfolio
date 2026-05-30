@@ -1,5 +1,5 @@
 import projectsData from "./projectsData";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaFileAlt } from "react-icons/fa";
 
 const Projects = () => {
   return (
@@ -28,7 +28,7 @@ const ProjectCard = ({ project, index }) => (
     data-aos-delay={index * 100}
     className="bg-bg border border-slate-800 rounded-lg shadow-lg overflow-hidden hover:border-accent transition-all duration-300 flex flex-col h-full"
   >
-    {/* PROJECT IMAGE */}
+ 
     <div className="relative h-48 bg-slate-800 overflow-hidden">
       {project.image ? (
         <img
@@ -43,7 +43,7 @@ const ProjectCard = ({ project, index }) => (
       )}
     </div>
 
-    {/* PROJECT CONTENT */}
+   
     <div className="p-6 flex flex-col flex-grow">
       <h3 className="text-xl font-bold text-textPrimary mb-3">
         {project.title}
@@ -53,7 +53,7 @@ const ProjectCard = ({ project, index }) => (
         {project.description}
       </p>
 
-      {/* TECH STACK */}
+  
       <div className="flex flex-wrap gap-2 mb-4">
         {project.tech.map((tech, idx) => (
           <span
@@ -65,8 +65,8 @@ const ProjectCard = ({ project, index }) => (
         ))}
       </div>
 
-      {/* BUTTONS */}
-      <div className="flex gap-3">
+   
+      <div className="flex gap-3 flex-wrap">
         <a
           href={project.code}
           target="_blank"
@@ -86,6 +86,18 @@ const ProjectCard = ({ project, index }) => (
           >
             <FaExternalLinkAlt />
             Demo
+          </a>
+        )}
+
+        {project.docs && (
+          <a
+            href={project.docs}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-2 border border-slate-700 text-textMuted px-4 py-2 rounded-md font-medium hover:border-accent hover:text-accent transition"
+          >
+            <FaFileAlt />
+            Docs
           </a>
         )}
       </div>

@@ -5,7 +5,7 @@ const Hero = () => {
         data-aos="fade-in"
         className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
       >
-        {/* IMAGE — top on mobile, left on desktop */}
+      
         <div className="flex justify-center md:justify-start mb-6 md:mb-0">
           <img
             draggable={false}
@@ -15,19 +15,22 @@ const Hero = () => {
           />
         </div>
 
-        {/* CONTENT — below image on mobile, right on desktop */}
         <div className="text-center md:text-left">
-          <h1 className=" text-3xl md:text-6xl font-bold text-textPrimary mb-4">
+          <h1 className="text-3xl md:text-6xl font-bold text-textPrimary mb-3">
             Anjali Kushwah
           </h1>
 
-          <h2 className="text-accent text-xl md:text-2xl font-medium mb-6">
-            Web Developer
+          <h2 className="text-accent text-lg md:text-2xl font-medium mb-2">
+            Frontend Developer · React.js
           </h2>
 
+          <p className="text-textMuted text-sm md:text-base mb-6">
+           Full-Stack — Node.js · Express · MySQL
+          </p>
+
           <p className="text-textMuted text-base md:text-lg max-w-xl mx-auto md:mx-0 mb-8">
-            I build clean, responsive, and user-focused web applications using
-            modern web technologies.
+            I build clean, responsive, and user-focused web applications — from
+            role-based platforms to real-time map tracking dashboards.
           </p>
 
           <div className="flex flex-row gap-3 justify-center md:justify-start">
