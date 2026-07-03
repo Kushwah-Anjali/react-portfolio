@@ -19,17 +19,17 @@ const Footer = () => {
             className="font-display font-light text-textPrimary mb-4 leading-tight"
             style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
           >
-            Have a website idea?
+            Let's Work Together{" "}
           </h3>
           <p className="text-textMuted text-sm md:text-base mb-8 max-w-sm mx-auto leading-relaxed">
-            I'm available for freelance projects and frontend internships. Let's
-            talk about what you're building.
+            I'm open to freelance web projects, frontend and full-stack
+            opportunities, and collaborations. Feel free to reach out.
           </p>
           <a
             href="mailto:anjalikushwah8163@gmail.com"
             className="inline-block bg-accent text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 transition text-sm"
           >
-            Get in Touch
+            Let's Talk
           </a>
         </div>
 
@@ -43,7 +43,7 @@ const Footer = () => {
               Anjali Kushwah
             </p>
             <p className="text-textMuted text-xs mt-1 uppercase tracking-cinema">
-              Frontend Developer · React
+              Full Stack Web Developer
             </p>
           </div>
 
@@ -73,32 +73,39 @@ const Footer = () => {
               <FaGithub className="text-base" />
               GitHub
             </a>
+            <div className="flex items-center gap-2 text-xs text-green-400">
+              <span className="w-2 h-2 rounded-full bg-green-400"></span>
+              Available for Freelance
+            </div>
           </div>
         </div>
 
         <p className="text-xs text-textMuted opacity-40">
-          © {new Date().getFullYear()} Anjali Kushwah. All rights reserved.
+          © {new Date().getFullYear()} Anjali Kushwah · Built with React &
+          Tailwind CSS{" "}
         </p>
         <button
           onClick={scrollToTop}
+          aria-label="Scroll to top"
           className="
     ml-auto
     w-12
     h-12
-    flex
-    items-center
-    justify-center
     rounded-full
     border
     border-slate-700
+    flex
+    items-center
+    justify-center
     text-textMuted
     hover:border-accent
-    hover:text-accent
+    hover:bg-accent
+    hover:text-white
     transition-all
     duration-300
   "
         >
-          <FaArrowUp className="text-lg" />
+          <FaArrowUp />
         </button>
       </div>
     </footer>
