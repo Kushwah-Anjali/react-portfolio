@@ -8,64 +8,94 @@ import {
   FaGithub,
   FaNodeJs,
 } from "react-icons/fa";
-import { SiTailwindcss, SiExpress, SiMysql, SiVercel } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiExpress,
+  SiMysql,
+  SiMongodb,
+  SiVscodium,
+} from "react-icons/si";
+import SectionHeader from "./SectionHeader";
 
-const skills = [
-  { name: "HTML5", level: 90, icon: <FaHtml5 className="text-orange-500" />, category: "Frontend" },
-  { name: "CSS3", level: 85, icon: <FaCss3Alt className="text-blue-500" />, category: "Frontend" },
-  { name: "JavaScript", level: 78, icon: <FaJs className="text-yellow-400" />, category: "Frontend" },
-  { name: "React.js", level: 82, icon: <FaReact className="text-cyan-400" />, category: "Frontend" },
-  { name: "Tailwind CSS", level: 80, icon: <SiTailwindcss className="text-sky-400" />, category: "Frontend" },
-  { name: "Bootstrap", level: 75, icon: <FaBootstrap className="text-purple-500" />, category: "Frontend" },
-
-  { name: "Node.js", level: 70, icon: <FaNodeJs className="text-green-500" />, category: "Backend" },
-  { name: "Express.js", level: 68, icon: <SiExpress className="text-gray-300" />, category: "Backend" },
-
-  { name: "MySQL", level: 72, icon: <SiMysql className="text-blue-400" />, category: "Database" },
-
-  { name: "Git", level: 75, icon: <FaGitAlt className="text-red-500" />, category: "Tools" },
-  { name: "GitHub", level: 78, icon: <FaGithub className="text-gray-300" />, category: "Tools" },
-  { name: "Vercel", level: 55, icon: <SiVercel className="text-white" />, category: "Tools" },
+const skillGroups = [
+  {
+    category: "Frontend",
+    skills: [
+      { name: "React", icon: <FaReact className="text-cyan-400" /> },
+      { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
+      { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
+      { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss className="text-sky-400" />,
+      },
+      { name: "Bootstrap", icon: <FaBootstrap className="text-purple-500" /> },
+    ],
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
+      { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
+    ],
+  },
+  {
+    category: "Database",
+    skills: [
+      { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
+      { name: "MySQL", icon: <SiMysql className="text-blue-400" /> },
+    ],
+  },
+  {
+    category: "Tools",
+    skills: [
+      { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
+      { name: "GitHub", icon: <FaGithub className="text-gray-300" /> },
+      { name: "VS Code", icon: <SiVscodium className="text-blue-400" /> },
+    ],
+  },
 ];
-
-const categories = ["Frontend", "Backend", "Database", "Tools"];
 
 const Skills = () => {
   return (
     <section
       id="skills"
-      className="bg-bg px-4 md:px-12 py-16 scroll-mt-16 md:scroll-mt-20"
+      className="bg-bg px-4 md:px-12 py-24 scroll-mt-16 md:scroll-mt-20"
     >
+      <div className="max-w-5xl mx-auto mb-16">
+        <div className="h-px bg-slate-800" />
+      </div>
+
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-textPrimary mb-10 text-center">
-          Skills
-        </h2>
+        <SectionHeader
+          eyebrow="Skills"
+          title="Technologies"
+          subtitle="Tools I use to build websites and applications."
+        />
 
         <div data-aos="fade-up" className="space-y-10">
-          {categories.map((category) => (
-            <div key={category}>
-              <h3 className="text-accent text-sm font-semibold uppercase tracking-widest mb-4">
-                {category}
-              </h3>
-
-              {/* DESKTOP GRID */}
-              <div className="hidden md:grid grid-cols-2 gap-4">
-                {skills
-                  .filter((s) => s.category === category)
-                  .map((skill, index) => (
-                    <SkillCard key={index} skill={skill} />
-                  ))}
-              </div>
-
-              {/* MOBILE HORIZONTAL SCROLL */}
-              <div className="flex md:hidden gap-4 overflow-x-auto py-2">
-                {skills
-                  .filter((s) => s.category === category)
-                  .map((skill, index) => (
-                    <div key={index} className="min-w-[180px] flex-shrink-0">
-                      <SkillCard skill={skill} />
-                    </div>
-                  ))}
+          {skillGroups.map((group) => (
+            <div key={group.category}>
+              <p className="text-xs text-textMuted uppercase tracking-cinema mb-4">
+                {group.category}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {group.skills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="card-cinematic bg-bg border border-slate-800 rounded-lg px-4 py-3 flex items-center gap-3"
+                  >
+                    <span className="text-xl">{skill.icon}</span>
+                    <span className="text-textPrimary text-sm font-medium">
+                      {skill.name}
+                    </span>
+                    {skill.note && (
+                      <span className="text-xs text-textMuted border border-slate-700 rounded-full px-2 py-0.5">
+                        {skill.note}
+                      </span>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           ))}
@@ -74,24 +104,5 @@ const Skills = () => {
     </section>
   );
 };
-
-const SkillCard = ({ skill }) => (
-  <div className="bg-bg border border-slate-800 rounded-lg p-4 shadow-sm">
-    <div className="flex items-center justify-between mb-3">
-      <div className="flex items-center gap-3 text-textPrimary text-lg font-medium">
-        <span className="text-2xl">{skill.icon}</span>
-        {skill.name}
-      </div>
-      <span className="text-sm text-textMuted">{skill.level}%</span>
-    </div>
-
-    <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
-      <div
-        className="h-full bg-accent rounded-full"
-        style={{ width: `${skill.level}%` }}
-      />
-    </div>
-  </div>
-);
 
 export default Skills;

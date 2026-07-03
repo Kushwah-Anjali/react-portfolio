@@ -1,22 +1,52 @@
 import ProjectsData from "./ProjectsData";
 import { FaGithub, FaExternalLinkAlt, FaFileAlt } from "react-icons/fa";
+import SectionHeader from "./SectionHeader";
 
 const Projects = () => {
+  const showcaseProjects = ProjectsData.filter((p) => p.featured);
+  const personalProjects = ProjectsData.filter((p) => !p.featured);
+
   return (
     <section
-      id="projects"
-      className="bg-bg px-4 md:px-12 py-16 scroll-mt-16 md:scroll-mt-20"
+      id="work"
+      className="bg-bg px-4 md:px-12 py-24 scroll-mt-16 md:scroll-mt-20"
     >
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-textPrimary mb-10 text-center">
-          My Projects
-        </h2>
+      <div className="max-w-6xl mx-auto mb-16">
+        <div className="h-px bg-slate-800" />
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ProjectsData.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
-          ))}
-        </div>
+      <div className="max-w-6xl mx-auto">
+        <SectionHeader
+          eyebrow="Work"
+          title="Projects"
+          subtitle="Website concepts and software development projects."
+        />
+
+        {showcaseProjects.length > 0 && (
+          <div className="mb-12">
+            <p className="text-xs text-textMuted uppercase tracking-cinema mb-6">
+              Website Showcase
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {showcaseProjects.map((project, index) => (
+                <ProjectCard key={index} project={project} index={index} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {personalProjects.length > 0 && (
+          <div>
+            <p className="text-xs text-textMuted uppercase tracking-cinema mb-6">
+              Personal Projects
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {personalProjects.map((project, index) => (
+                <ProjectCard key={index} project={project} index={index} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -25,11 +55,10 @@ const Projects = () => {
 const ProjectCard = ({ project, index }) => (
   <div
     data-aos="fade-up"
-    data-aos-delay={index * 100}
-    className="bg-bg border border-slate-800 rounded-lg shadow-lg overflow-hidden hover:border-accent transition-all duration-300 flex flex-col h-full"
+    data-aos-delay={index * 80}
+    className="card-cinematic bg-bg border border-slate-800 rounded-lg overflow-hidden flex flex-col h-full"
   >
- 
-    <div className="relative h-48 bg-slate-800 overflow-hidden">
+    <div className="relative h-44 bg-slate-900 overflow-hidden">
       {project.image ? (
         <img
           src={project.image}
@@ -37,15 +66,20 @@ const ProjectCard = ({ project, index }) => (
           className="w-full h-full object-cover"
         />
       ) : (
-        <div className="w-full h-full flex items-center justify-center text-textMuted text-4xl">
+        <div className="w-full h-full flex items-center justify-center text-slate-700 text-4xl">
           <FaGithub />
         </div>
       )}
     </div>
 
-   
     <div className="p-6 flex flex-col flex-grow">
-      <h3 className="text-xl font-bold text-textPrimary mb-3">
+      {project.tag && (
+        <p className="text-xs text-accent uppercase tracking-cinema font-medium mb-2">
+          {project.tag}
+        </p>
+      )}
+
+      <h3 className="font-display font-medium text-textPrimary text-xl mb-2 leading-snug">
         {project.title}
       </h3>
 
@@ -53,39 +87,39 @@ const ProjectCard = ({ project, index }) => (
         {project.description}
       </p>
 
-  
       <div className="flex flex-wrap gap-2 mb-4">
         {project.tech.map((tech, idx) => (
           <span
             key={idx}
-            className="px-3 py-1 text-xs font-medium bg-slate-800 text-accent rounded-full"
+            className="px-2.5 py-1 text-xs font-medium bg-slate-800 text-accent rounded-full"
           >
             {tech}
           </span>
         ))}
       </div>
 
-   
-      <div className="flex gap-3 flex-wrap">
-        <a
-          href={project.code}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 bg-slate-800 text-textPrimary px-4 py-2 rounded-md font-medium hover:bg-slate-700 transition"
-        >
-          <FaGithub />
-          Code
-        </a>
+      <div className="flex gap-2 flex-wrap">
+        {project.code && project.code !== "#" && (
+          <a
+            href={project.code}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-2 bg-slate-800 text-textPrimary px-4 py-2 rounded-md font-medium hover:bg-slate-700 transition text-xs"
+          >
+            <FaGithub />
+            Code
+          </a>
+        )}
 
-        {project.demo !== "#" && (
+        {project.demo && project.demo !== "#" && (
           <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 bg-accent text-white px-4 py-2 rounded-md font-medium hover:opacity-90 transition"
+            className="flex-1 flex items-center justify-center gap-2 bg-accent text-white px-4 py-2 rounded-md font-medium hover:opacity-90 transition text-xs"
           >
             <FaExternalLinkAlt />
-            Demo
+            Live Demo
           </a>
         )}
 
@@ -94,7 +128,7 @@ const ProjectCard = ({ project, index }) => (
             href={project.docs}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 border border-slate-700 text-textMuted px-4 py-2 rounded-md font-medium hover:border-accent hover:text-accent transition"
+            className="flex-1 flex items-center justify-center gap-2 border border-slate-700 text-textMuted px-4 py-2 rounded-md font-medium hover:border-accent hover:text-accent transition text-xs"
           >
             <FaFileAlt />
             Docs

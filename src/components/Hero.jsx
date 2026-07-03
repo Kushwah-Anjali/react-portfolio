@@ -1,53 +1,111 @@
 const Hero = () => {
   return (
-    <section className="bg-bg flex items-center px-4 md:px-12 pt-32 md:pt-0 md:min-h-[calc(100vh-64px)]">
+    <section className="bg-bg relative flex items-center px-4 md:px-12 min-h-screen pt-20 overflow-hidden">
+      {/* Ambient glow */}
+      <div
+        aria-hidden="true"
+        className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+
       <div
         data-aos="fade-in"
-        className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+        className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-center py-12"
       >
-      
-        <div className="flex justify-center md:justify-start mb-6 md:mb-0">
-          <img
-            draggable={false}
-            src="/heroimg.jpg"
-            alt="Anjali Kushwah"
-            className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border border-gray-700"
-          />
-        </div>
-
-        <div className="text-center md:text-left">
-          <h1 className="text-3xl md:text-6xl font-bold text-textPrimary mb-3">
-            Anjali Kushwah
+        {/* LEFT — Text */}
+        <div>
+          <h1
+            className="font-display font-light text-textPrimary leading-none mb-5"
+            style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
+          >
+            Anjali
+            <br />
+            Kushwah
           </h1>
 
-          <h2 className="text-accent text-lg md:text-2xl font-medium mb-2">
-            Frontend Developer · React.js
-          </h2>
+          {/* Signature divider line */}
+          <div className="flex items-center gap-4 mb-6">
+            <div
+              className="h-px bg-accent flex-shrink-0"
+              style={{ width: "3rem" }}
+            />
+            <p className="text-textMuted text-xs uppercase tracking-cinema">
+              Building Modern Business Websites{" "}
+            </p>
+          </div>
 
-          <p className="text-textMuted text-sm md:text-base mb-6">
-           Full-Stack — Node.js · Express · MySQL
+          {/* Hook */}
+          <p
+            className="text-textPrimary max-w-md mb-3 leading-relaxed font-display font-light"
+            style={{ fontSize: "clamp(1rem, 2vw, 1.2rem)" }}
+          >
+            Modern, responsive websites built for businesses that want a
+            professional online presence.{" "}
           </p>
 
-          <p className="text-textMuted text-base md:text-lg max-w-xl mx-auto md:mx-0 mb-8">
-            I build clean, responsive, and user-focused web applications — from
-            role-based platforms to real-time map tracking dashboards.
+          <p className="text-textMuted text-sm max-w-md mb-3 leading-relaxed">
+            I build responsive websites and web applications using React with a
+            focus on clean design, performance, and user experience.
           </p>
 
-          <div className="flex flex-row gap-3 justify-center md:justify-start">
+          <p className="text-textMuted text-xs max-w-md mb-8 leading-relaxed">
+            BCA Graduate · Open to Freelance Projects · Frontend & Full Stack
+            Opportunities{" "}
+          </p>
+
+          <div className="flex flex-row gap-3">
             <a
-              href="#projects"
-              className="bg-accent text-white px-5 py-2 md:px-7 md:py-3 rounded-md font-semibold hover:opacity-90 transition"
+              href="#work"
+              className="bg-accent text-white px-6 py-2.5 md:px-8 md:py-3 rounded-md font-semibold hover:opacity-90 transition text-sm"
             >
-              View Projects
+              View My Work
             </a>
             <a
               href="#contact"
-              className="border border-textMuted text-textMuted px-5 py-2 md:px-7 md:py-3 rounded-md font-semibold hover:border-accent hover:text-accent transition"
+              className="border border-textMuted text-textMuted px-6 py-2.5 md:px-8 md:py-3 rounded-md font-semibold hover:border-accent hover:text-accent transition text-sm"
             >
               Contact Me
             </a>
           </div>
         </div>
+
+        {/* RIGHT — Photo + role label below */}
+        <div className="flex flex-col items-center gap-4 order-first md:order-last">
+          <div className="relative">
+            <img
+              draggable={false}
+              src="/heroimg.jpg"
+              alt="Anjali Kushwah"
+              className="w-44 h-44 md:w-60 md:h-60 rounded-full object-cover"
+              style={{ border: "1px solid rgba(148,163,184,0.2)" }}
+            />
+            <div
+              aria-hidden="true"
+              className="absolute rounded-full pointer-events-none"
+              style={{
+                inset: "-10px",
+                border: "1px solid rgba(59,130,246,0.15)",
+              }}
+            />
+          </div>
+
+          {/* Blue label below the image */}
+          <p className="text-accent text-xs uppercase tracking-cinema font-medium text-center">
+            React • Node.js • MongoDB
+          </p>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2">
+        <p className="text-textMuted text-xs uppercase tracking-cinema">
+          Scroll
+        </p>
+        <div className="w-px bg-slate-700" style={{ height: "2.5rem" }} />
       </div>
     </section>
   );
